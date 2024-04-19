@@ -1,13 +1,6 @@
-FROM centos:7
-RUN yum update -y
-RUN yum install java openjdk -y
-ADD https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.100/bin/apache-tomcat-8.5.100.tar.gz /opt
-WORKDIR /opt
-RUN tar -xvzf apache-tomcat-8.5.100.tar.gz -C /opt
-WORKDIR /opt/apache-tomcat-8.5.100/bin/
-ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/student.war /opt/apache-tomcat-8.5.100/webapps/
-ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/mysql-connector.jar /opt/apache-tomcat-8.5.100/lib/
-COPY context.xml /opt/apache-tomcat-8.5.100/conf/context.xml
-ENV Name="Jarvis_Home"
-EXPOSE 8080
-CMD ["./catalina.sh", "run"]
+FROM centos                                                     #pull centos image
+WORKDIR /opt                                                    #chnages directoy to cd and performs tasks there
+RUN echo "My first docker file" > f1.txt                        #creates file and prints message
+ENV myname Satej                                                #sets runtime variable ---> to run type on cmd # echo $myname -->o/p Satej
+COPY f2.txt /opt                                                #copy file from host-machine to container
+ADD test.tar.gz /opt                                            #unzip file test.tar.gz in container which is available in host-machine
