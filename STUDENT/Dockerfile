@@ -1,4 +1,3 @@
-
 FROM ubuntu
 RUN apt update && apt install openjdk-11-jre-headless -y
 ADD https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.100/bin/apache-tomcat-8.5.100.tar.gz /opt
