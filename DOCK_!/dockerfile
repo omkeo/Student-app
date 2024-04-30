@@ -1,0 +1,5 @@
+# Use a minimal base image
+FROM alpine:latest
+
+# Create 10 empty files in the /opt directory
+RUN touch /opt/file1 /opt/file2 /opt/file3 /opt/file4 /opt/file5 /opt/file6 /opt/file7 /opt/file8 /opt/file9 /opt/file10
